@@ -80,7 +80,7 @@ ppb_resam <- resample(ppb1, wi_poly_rast)
 # look at em
 plot(ppb_resam)
 
-# now, put a 1 in the layer that has the highest posterior prob and NAs elsewhere
+# now, put a 1 in the layer that has the highest posterior prob and 0's elsewhere
 ppb_ones <- calc(ppb_resam, fun = function(x) {y<-rep(0, length(x)); y[which.max(x)] <- 1; y })
 names(ppb_ones) <- names(ppb_resam)
 
